@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "jalsani"
+  },
+  "targets": {
+    "jalsani": {
+      "hosting": {
+        "production": [
+          "jalsani"
+        ],
+        "alpha": [
+          "dev-jalsani"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
