@@ -20,5 +20,5 @@ jobs:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_JALSANI_YEOJUNG_FRONT }}"
           channelId: live
-          projectId: hello-y-all-project
+          projectId: jalsani-yeojung-front
           target: production
