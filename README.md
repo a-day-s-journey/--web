@@ -4,9 +4,8 @@
 
 # URL
 
-- 프로덕션
-- [Production jalsani.web.app](jalsani.web.app)
-- [Development dev-jalsani.web.app](dev-jalsani.web.app)
+- [Production jalsani.web.app](https://jalsani.web.app)
+- [Development dev-jalsani.web.app](https://dev-jalsani.web.app)
 
 ## # 기술 스택
 
