@@ -1,9 +1,10 @@
 .button {
   border: 0;
   border-radius: 4px;
-  padding: 4px 10px;
+  padding: 0 4px;
   background-color: grey;
   color: white;
+  display: inline-block;
   &-primary {
     background-color: #c4ff13;
     color: black;
@@ -19,5 +20,16 @@
   }
   &-isFull {
     width: 100%;
+  }
+  &-SM {
+    height: 44px;
+  }
+  &-MD {
+    padding: 0 8px;
+    height: 52px;
+  }
+  &-LG {
+    padding: 0 12px;
+    height: 60px;
   }
 }

@@ -8,13 +8,19 @@ const cx = classNames.bind(styles);
 
 export interface ButtonLayoutProps {
   buttonType: 'primary' | 'ghost' | 'disabled' | 'default';
+  buttonSize?: 'SM' | 'MD' | 'LG';
   isFull?: boolean;
 }
 
-const Button: FunctionComponent<ButtonProps> = ({ children, buttonType, isFull }) => {
+const Button: FunctionComponent<ButtonProps> = ({ children, buttonSize, buttonType, isFull }) => {
   return (
     <button
-      className={cx('button', isFull && 'button-isFull', buttonType && `button-${buttonType}`)}
+      className={cx(
+        'button',
+        isFull && 'button-isFull',
+        `button-${buttonType ?? 'default'}`,
+        `button-${buttonSize ?? 'MD'}`,
+      )}
     >
       {children}
     </button>
