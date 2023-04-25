@@ -3,14 +3,24 @@ import * as Pages from 'pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function Router() {
-  const pages: any[] = Object.entries(Pages); //(string | object)
+  interface PageType {
+    path: string;
+    default: JSX.Element;
+  }
+
+  const routes: PageType[] = Object.values(Pages).map((page) => {
+    return {
+      path: page['path'],
+      default: page.default(),
+    };
+  });
+
   return (
     <BrowserRouter>
       <Routes>
-        {pages?.map((page) => {
-          console.log(page);
-          return <Route key={page[1].path} path={page[1].path} element={page[1].default()} />;
-        })}
+        {routes?.map((route) => (
+          <Route key={route.path} path={route?.path} element={route?.default} />
+        ))}
       </Routes>
     </BrowserRouter>
   );
