@@ -1,0 +1,23 @@
+.button {
+  border: 0;
+  border-radius: 4px;
+  padding: 4px 10px;
+  background-color: grey;
+  color: white;
+  &-primary {
+    background-color: #c4ff13;
+    color: black;
+  }
+  &-ghost {
+    background-color: #fff;
+    border: 1px solid grey;
+    color: grey;
+  }
+  &-disabled {
+    background-color: #ddd;
+    color: white;
+  }
+  &-isFull {
+    width: 100%;
+  }
+}
