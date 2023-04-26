@@ -1,15 +1,17 @@
 {
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "baseUrl": "./src",
+    // "baseUrl": ".",
+    // "baseUrl": ".",
+    // "paths": {
+    //   "src/*": ["/src/*"]
+    // },
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "strict": false,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -18,6 +20,6 @@
     "jsx": "react-jsx",
     "typeRoots": ["./@types", "./node_modules/@types"]
   },
-  "include": ["src"],
-  "extends": "./tsconfig.paths.json"
+  "exclude": ["node_modules", "**/node_modules/*"],
+  "include": ["tsconfig.paths.json", "src", "craco.config.js"]
 }

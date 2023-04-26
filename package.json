@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^7.1.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -28,9 +29,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -66,15 +67,16 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^7.0.7",
+    "@storybook/addon-docs": "^7.0.7",
     "@storybook/addon-essentials": "^7.0.7",
     "@storybook/addon-interactions": "^7.0.7",
-    "@storybook/addon-knobs": "^7.0.0",
     "@storybook/addon-links": "^7.0.7",
     "@storybook/addon-mdx-gfm": "^7.0.7",
+    "@storybook/addon-storysource": "^7.0.7",
+    "@storybook/addon-viewport": "^7.0.7",
     "@storybook/cli": "^7.0.7",
     "@storybook/node-logger": "^7.0.7",
     "@storybook/preset-create-react-app": "^7.0.7",
-    "@storybook/react": "^7.0.7",
     "@storybook/react-webpack5": "^7.0.7",
     "@storybook/testing-library": "^0.1.0",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
@@ -96,6 +98,7 @@
     "prop-types": "^15.8.1",
     "react-app-rewire-alias": "^1.1.7",
     "react-app-rewired": "^2.2.1",
+    "tsconfig-paths-webpack-plugin": "^4.0.1",
     "webpack": "^5.80.0"
   },
   "readme": "ERROR: No README data found!",

@@ -1,5 +1,5 @@
 // import { ButtonLayout, ButtonLayoutProps } from './styles';
-import React, { FunctionComponent, HTMLProps } from 'react';
+import React, { FunctionComponent } from 'react';
 
 import classNames from 'classnames/bind';
 import styles from './styles.module.scss';
@@ -12,7 +12,7 @@ export interface InputLayoutProps {
 }
 
 const Input: FunctionComponent<InputProps> = ({ placeholder, type }) => {
-  return <input type={type} placeholder={placeholder ?? ''} />;
+  return <input className={cx('input')} type={type} placeholder={placeholder ?? ''} />;
 };
 
 export default Input;

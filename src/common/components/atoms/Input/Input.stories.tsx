@@ -7,33 +7,32 @@ export default {
   title: 'components/Input',
   component: Input,
 };
-
 const Template: Story<InputProps> = (args) => <Input {...args} />;
 
-export const Default = Template.bind({});
-
-Default.args = {
+export const TextType = Template.bind({});
+TextType.args = {
   type: 'text',
   placeholder: '빈칸을 채우시오',
 };
-
-export const Number = Template.bind({});
-
-Number.args = {
+export const NumberType = Template.bind({});
+NumberType.args = {
   type: 'number',
-  placeholder: '숫자를 입력해주세요',
+  placeholder: '빈칸을 채우시오',
 };
 
-export const File = Template.bind({});
-
-File.args = {
-  type: 'file',
-  placeholder: '파일 등록??',
+export const DateType = Template.bind({});
+DateType.args = {
+  type: 'date',
+  placeholder: '빈칸을 채우시오',
 };
 
-export const Color = Template.bind({});
-
-Color.args = {
-  type: 'color',
-  placeholder: '색 선택',
+export const EmailType = Template.bind({});
+DateType.args = {
+  type: 'email',
+  placeholder: '빈칸을 채우시오',
+};
+export const PasswordType = Template.bind({});
+PasswordType.args = {
+  type: 'password',
+  placeholder: '빈칸을 채우시오',
 };

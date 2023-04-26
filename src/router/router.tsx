@@ -1,4 +1,4 @@
-import * as Pages from 'pages';
+import * as PageList from '@pages';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -8,10 +8,10 @@ function Router() {
     default: JSX.Element;
   }
 
-  const routes: PageType[] = Object.values(Pages).map((page) => {
+  const routes: PageType[] = Object.values(PageList).map((pageItem) => {
     return {
-      path: page['path'],
-      default: page.default(),
+      path: pageItem['path'],
+      default: pageItem.default(),
     };
   });
 
