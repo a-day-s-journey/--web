@@ -1,9 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import axios from 'axios';
 
 const { Kakao } = window;
 function KakaoRecirectHandler() {
+  interface UserInfoType {
+    [index: string]: string; //HTMLElement; //React.ReactNode;
+  }
+  const [token, setToken] = useState<string>('');
+  const [userInfo, setUserInfo] = useState<UserInfoType | undefined>(undefined);
   useEffect(() => {
     const params = new URL(document.location.toString()).searchParams;
     const code = params.get('code');
@@ -20,11 +25,13 @@ function KakaoRecirectHandler() {
       )
       .then((res) => {
         console.log(res);
+        setToken(res?.data?.access_token ?? '');
         Kakao.Auth.setAccessToken(res.data.access_token);
         Kakao.API.request({
           url: '/v2/user/me',
           success: function (response: any) {
             console.log(response);
+            setUserInfo(response?.kakao_account);
           },
           fail: function (error: any) {
             console.log(error);
@@ -37,6 +44,10 @@ function KakaoRecirectHandler() {
   return (
     <div>
       kakao login 완료
+      <br />
+      {token && `token: ${token}`}
+      <br />
+      {userInfo && `email: ${userInfo?.email}`}
       <br />
       결과 값 보는 방법: 개발자도구-network
     </div>
