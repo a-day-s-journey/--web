@@ -3,8 +3,6 @@ import * as PageList from '@pages';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Main from '@pages/main';
-
 function Router() {
   interface PageType {
     path: string;

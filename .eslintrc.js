@@ -39,15 +39,16 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   rules: {
+    '@typescript-eslint/no-explicit-any': 'off',
     // 추후 .prettierrc.js 파일에서 설정해줄 예정
   },
   settings: {
     react: {
-      version: 'detect'
-    }
-  }
+      version: 'detect',
+    },
+  },
 };
