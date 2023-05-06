@@ -1,11 +1,12 @@
-.input-wrapper {
-  .input {
+.textarea-wrapper {
+  .textarea {
     background-color: #fff;
     border: 1px solid #bababa;
     border-radius: 8px;
     padding: 14px;
     outline: none;
     width: 100%;
+    resize: none;
     &::placeholder {
       color: #959595;
     }

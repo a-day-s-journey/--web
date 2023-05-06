@@ -1,10 +1,10 @@
-import Button, { ButtonProps } from './index';
+import Button, { ButtonProps } from '@components/atoms/Button/index';
 
 import React from 'react';
 import { Story } from '@storybook/react';
 
 export default {
-  title: 'components/Button',
+  title: 'components/Atoms/Button',
   component: Button,
 };
 

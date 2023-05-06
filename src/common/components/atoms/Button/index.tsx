@@ -1,4 +1,3 @@
-// import { ButtonLayout, ButtonLayoutProps } from './styles';
 import React, { FunctionComponent, HTMLProps } from 'react';
 
 import classNames from 'classnames/bind';

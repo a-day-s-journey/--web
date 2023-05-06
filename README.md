@@ -16,6 +16,10 @@
 - recoil
 - ESlint, Prettier
 
+## # 디자인 시스템
+
+[아토믹 디자인 시스템](https://atomicdesign.bradfrost.com/chapter-2/)
+
 ## # 설치
 
 1. `yarn install`
