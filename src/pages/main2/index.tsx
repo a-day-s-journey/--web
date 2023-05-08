@@ -1,4 +1,5 @@
 import * as A from '@components/atoms';
+import * as M from '@components/molecules';
 
 import React, { useState } from 'react';
 
@@ -10,6 +11,15 @@ function Main2() {
   const [inputValue, setInputValue] = useState('');
   return (
     <div className={cx('main-container')}>
+      <M.Header
+        title="title"
+        // leftButtonRender={() => {
+        //   return <div>left button</div>;
+        // }}
+        rightButtonRender={() => {
+          return <div>right button</div>;
+        }}
+      />
       <button>잘사니 메인2 페이지입니다.</button>
       <br />
       <A.Input
