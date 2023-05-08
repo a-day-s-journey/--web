@@ -9,6 +9,7 @@ export interface ButtonLayoutProps {
   buttonType: 'primary' | 'ghost' | 'disabled' | 'default';
   buttonSize?: 'SM' | 'MD' | 'LG';
   isFull?: boolean;
+  disabled?: boolean;
 }
 
 const Button: FunctionComponent<ButtonProps> = ({
@@ -17,6 +18,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   buttonType,
   isFull,
   onClick,
+  disabled,
 }) => {
   return (
     <button
@@ -25,6 +27,7 @@ const Button: FunctionComponent<ButtonProps> = ({
         isFull && 'button-isFull',
         `button-${buttonType ?? 'default'}`,
         `button-${buttonSize ?? 'MD'}`,
+        disabled && `button-disabled`,
       )}
       onClick={onClick}
     >

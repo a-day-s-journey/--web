@@ -1,4 +1,4 @@
-import React, { FunctionComponent, HTMLProps } from 'react';
+import React, { FunctionComponent } from 'react';
 
 import classNames from 'classnames/bind';
 import styles from './styles.module.scss';
@@ -13,8 +13,10 @@ export interface InputLayoutProps {
   maxLen?: number;
   minLen?: number;
   className?: string;
+  value: string;
+  label?: string;
+  onChange: (text: string) => void;
 }
-
 function digit_check(evt) {
   const code = evt.which ? evt.which : evt.keyCode;
 
@@ -35,26 +37,33 @@ const Input: FunctionComponent<InputProps> = ({
   maxLen,
   minLen,
   className,
+  label,
   ...props
 }) => {
+  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    onChange(event.target.value);
+  };
   return (
-    <div className={cx('input-wrapper')}>
-      <input
-        {...props}
-        autoComplete="none"
-        className={cx('input', className)}
-        type={type}
-        placeholder={placeholder ?? ''}
-        onChange={onChange}
-        value={value}
-        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => isNumeric && digit_check(e)}
-        maxLength={maxLen}
-        minLength={minLen}
-      />
+    <div className={cx('input-container')}>
+      <div className={cx('input-wrapper')}>
+        <input
+          {...props}
+          autoComplete="none"
+          className={cx('input', className)}
+          type={type}
+          placeholder={placeholder ?? ''}
+          onChange={changeHandler}
+          value={value}
+          onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => isNumeric && digit_check(e)}
+          maxLength={maxLen}
+          minLength={minLen}
+        />
+        <div className={cx('label-wrapper')}>{label}</div>
+      </div>
       {error && <div className={cx('error')}>{error}</div>}
     </div>
   );
 };
 
 export default Input;
-export interface InputProps extends HTMLProps<HTMLInputElement>, InputLayoutProps {}
+export type InputProps = InputLayoutProps; //, HTMLProps<HTMLInputElement>

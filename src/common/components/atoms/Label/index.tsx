@@ -8,12 +8,13 @@ const cx = classNames.bind(styles);
 export interface InputLayoutProps {
   className?: string;
   required?: boolean;
+  title?: string;
 }
 
-const Label: FunctionComponent<LabelProps> = ({ children, required, className }) => {
+const Label: FunctionComponent<LabelProps> = ({ required, className, title }) => {
   return (
     <div className={cx('Label', className)}>
-      {children}
+      {title}
       {required && <span className={cx('required')}>*</span>}
     </div>
   );

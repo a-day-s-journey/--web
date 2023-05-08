@@ -25,8 +25,8 @@ function Main2() {
       <A.Input
         placeholder="placeholder"
         type="text"
-        onChange={(e: React.FormEvent<HTMLInputElement>) => {
-          setInputValue(e.currentTarget.value);
+        onChange={(value) => {
+          setInputValue(value);
         }}
         value={inputValue}
         error=""

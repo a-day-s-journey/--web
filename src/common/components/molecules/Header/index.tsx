@@ -4,6 +4,7 @@ import React, { FunctionComponent, HTMLProps } from 'react';
 
 import classNames from 'classnames/bind';
 import styles from './styles.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -14,6 +15,7 @@ export interface HeaderLayoutProps {
 }
 
 const Header: FunctionComponent<HeaderProps> = ({ title, leftButtonRender, rightButtonRender }) => {
+  const navigate = useNavigate();
   return (
     <div className={cx('header-container')}>
       <div className={cx('header-container-fix')}>
@@ -21,7 +23,7 @@ const Header: FunctionComponent<HeaderProps> = ({ title, leftButtonRender, right
           {leftButtonRender ? (
             leftButtonRender()
           ) : (
-            <button>
+            <button onClick={() => navigate(-1)}>
               <Svgs.ArrowLeft />
             </button>
           )}

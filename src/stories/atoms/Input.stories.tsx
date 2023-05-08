@@ -11,8 +11,8 @@ export default {
 
 const Template: Story<InputProps> = (args) => {
   const [value, setValue] = useState<string>('');
-  const inputHandler = (e: React.FormEvent<HTMLInputElement>) => {
-    setValue(e.currentTarget.value);
+  const inputHandler = (value) => {
+    setValue(value);
   };
   return <Input {...args} value={value} onChange={inputHandler} />;
 };
