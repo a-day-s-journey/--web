@@ -44,12 +44,12 @@ const Input: FunctionComponent<InputProps> = ({
     onChange(event.target.value);
   };
   return (
-    <div className={cx('input-container')}>
+    <div className={cx('input-container', className)}>
       <div className={cx('input-wrapper')}>
         <input
           {...props}
           autoComplete="none"
-          className={cx('input', className)}
+          className={cx('input')}
           type={type}
           placeholder={placeholder ?? ''}
           onChange={changeHandler}

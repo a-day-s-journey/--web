@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 const cx = classNames.bind(styles);
 
 export interface ButtonLayoutProps {
-  buttonType: 'primary' | 'ghost' | 'disabled' | 'default';
+  buttonType: 'primary' | 'default';
   buttonSize?: 'SM' | 'MD' | 'LG';
   isFull?: boolean;
   disabled?: boolean;
@@ -29,7 +29,7 @@ const Button: FunctionComponent<ButtonProps> = ({
         `button-${buttonSize ?? 'MD'}`,
         disabled && `button-disabled`,
       )}
-      onClick={onClick}
+      onClick={!disabled ? onClick : null}
     >
       {children}
     </button>

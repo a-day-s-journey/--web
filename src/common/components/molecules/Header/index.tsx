@@ -12,13 +12,19 @@ export interface HeaderLayoutProps {
   title?: string;
   leftButtonRender?: () => JSX.Element;
   rightButtonRender?: () => JSX.Element;
+  noBorder?: boolean;
 }
 
-const Header: FunctionComponent<HeaderProps> = ({ title, leftButtonRender, rightButtonRender }) => {
+const Header: FunctionComponent<HeaderProps> = ({
+  title,
+  leftButtonRender,
+  rightButtonRender,
+  noBorder,
+}) => {
   const navigate = useNavigate();
   return (
     <div className={cx('header-container')}>
-      <div className={cx('header-container-fix')}>
+      <div className={cx('header-container-fix', noBorder && 'header-container-fix-no-border')}>
         <div className={cx('button-wrapper', 'button-wrapper-left')}>
           {leftButtonRender ? (
             leftButtonRender()

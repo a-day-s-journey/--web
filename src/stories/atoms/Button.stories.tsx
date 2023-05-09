@@ -27,21 +27,3 @@ Primary.args = {
   children: '버튼text',
   buttonSize: 'MD',
 };
-
-export const Ghost = Template.bind({});
-
-Ghost.args = {
-  buttonType: 'ghost',
-  isFull: false,
-  children: '버튼text',
-  buttonSize: 'MD',
-};
-
-export const Disabled = Template.bind({});
-
-Disabled.args = {
-  buttonType: 'disabled',
-  isFull: false,
-  children: '버튼text',
-  buttonSize: 'MD',
-};

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, HTMLProps } from 'react';
+import React, { FunctionComponent } from 'react';
 
 import classNames from 'classnames/bind';
 import styles from './styles.module.scss';
@@ -9,11 +9,12 @@ export interface InputLayoutProps {
   className?: string;
   required?: boolean;
   title?: string;
+  size?: string;
 }
 
-const Label: FunctionComponent<LabelProps> = ({ required, className, title }) => {
+const Label: FunctionComponent<LabelProps> = ({ size, required, className, title }) => {
   return (
-    <div className={cx('Label', className)}>
+    <div className={cx('label', `label-${size ?? 'sm'}`, className)}>
       {title}
       {required && <span className={cx('required')}>*</span>}
     </div>
@@ -21,4 +22,4 @@ const Label: FunctionComponent<LabelProps> = ({ required, className, title }) =>
 };
 
 export default Label;
-export interface LabelProps extends HTMLProps<HTMLDivElement>, InputLayoutProps {}
+export type LabelProps = InputLayoutProps;

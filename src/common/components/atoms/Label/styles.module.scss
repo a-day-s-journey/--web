@@ -1,8 +1,18 @@
-.Label {
+.label {
   color: #424242;
-
+  color: #191919;
   & .required {
     color: #fe8256;
     margin-left: 3px;
+  }
+  &-sm {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  &-md {
+  }
+  &-lg {
+    font-size: 18px;
+    font-weight: 500;
   }
 }

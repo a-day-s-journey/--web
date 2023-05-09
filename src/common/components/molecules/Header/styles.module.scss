@@ -14,6 +14,10 @@
     justify-content: space-between;
     padding: 0 16px;
     align-items: center;
+    &-no-border {
+      border: 0;
+    }
+
     .title-wrapper {
       position: absolute;
       right: 110px;
@@ -24,6 +28,8 @@
       display: -webkit-box;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
+      font-size: 18px;
+      font-weight: 400;
     }
   }
 }

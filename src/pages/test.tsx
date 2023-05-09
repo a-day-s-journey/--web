@@ -3,15 +3,12 @@ import * as M from '@components/molecules';
 
 import React, { useState } from 'react';
 
-import classNames from 'classnames/bind';
-import styles from './styles.module.scss';
-
-const cx = classNames.bind(styles);
-function Main2() {
+function Test() {
   const [inputValue, setInputValue] = useState('');
   return (
-    <div className={cx('main-container')}>
+    <div>
       <M.Header
+        noBorder
         title="title"
         // leftButtonRender={() => {
         //   return <div>left button</div>;
@@ -45,5 +42,5 @@ function Main2() {
     </div>
   );
 }
-export default Main2;
-export const path = '/main2';
+export default Test;
+export const path = '/test';

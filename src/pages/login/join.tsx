@@ -9,17 +9,37 @@ import styles from './styles.module.scss';
 
 const cx = classNames.bind(styles);
 function Join() {
-  const [phoneInfo, setPhoneInfo] = useState<{ [key: string]: any }>({
+  interface phoneInfoType {
+    number: string;
+    authNumber: string;
+    getAuthNumber: boolean;
+    isValid: boolean;
+  }
+  interface formDataType {
+    question: string;
+    isRequired: boolean;
+    value: string;
+  }
+  interface userInfoListType {
+    id: number;
+    skippable?: boolean;
+    title: string;
+    subTitle?: string;
+    formData: formDataType[];
+  }
+
+  const [phoneInfo, setPhoneInfo] = useState<phoneInfoType>({
     number: '',
     authNumber: '',
     getAuthNumber: false,
     isValid: false,
   });
-  const [userInfoStep, setUserInfoStep] = useState<{ [key: string]: any }>();
-  const [userInfo, setUserInfo] = useState<{ [key: string]: any }[]>([
+  const [userInfoStep, setUserInfoStep] = useState<userInfoListType>();
+  const [userInfo, setUserInfo] = useState<userInfoListType[]>([
     {
       id: 1,
       title: '초등학교 정보를 입력해주세요.',
+      subTitle: '초등학교',
       formData: [
         { question: '학교명', isRequired: true, value: '' },
         { question: '졸업년도', isRequired: true, value: '' },
@@ -28,6 +48,7 @@ function Join() {
     {
       id: 2,
       title: '중학교 정보를 입력해주세요.',
+      subTitle: '중학교',
       formData: [
         { question: '학교명', isRequired: true, value: '' },
         { question: '졸업년도', isRequired: true, value: '' },
@@ -36,6 +57,7 @@ function Join() {
     {
       id: 3,
       title: '고등학교 정보를 입력해주세요.',
+      subTitle: '고등학교',
       formData: [
         { question: '학교명', isRequired: true, value: '' },
         { question: '졸업년도', isRequired: true, value: '' },
@@ -50,9 +72,10 @@ function Join() {
       id: 5,
       skippable: true,
       title: 'MBTI를 적어주세요.',
-      formData: [{ question: 'MBTI', isRequired: true, value: '' }],
+      formData: [{ question: 'MBTI', isRequired: false, value: '' }],
     },
   ]);
+
   function handleChange({ infoName, key, value }) {
     if (infoName === 'phoneInfo') {
       setPhoneInfo({ ...phoneInfo, [key]: value });
@@ -61,17 +84,32 @@ function Join() {
       setUserInfoStep({ ...userInfoStep, [key]: value });
     }
   }
+
   return (
     <div className={cx('signup-container')}>
       <M.Header title={'회원가입'} />
       <div className={cx('form-container')}>
         {phoneInfo?.isValid ? (
           <div className={cx('user-info-container')}>
-            {userInfoStep?.title}
+            {userInfoStep?.title && (
+              <A.Label size={'lg'} title={userInfoStep?.title} className={cx('label-title')} />
+            )}
+            {userInfoStep?.subTitle && (
+              <A.Label
+                size={'sm'}
+                title={userInfoStep?.subTitle}
+                className={cx('label-title-sub')}
+              />
+            )}
             {userInfoStep?.formData?.map((item, index) => {
               return (
                 <div className={cx('form-wrapper')} key={item?.question + userInfoStep?.id + index}>
-                  <A.Label title={item?.question} required={item?.isRequired} />
+                  <A.Label
+                    size={'sm'}
+                    title={item?.question}
+                    required={item?.isRequired}
+                    className={cx('label-title-sub')}
+                  />
                   <A.Input
                     onChange={(value) => {
                       const formDataTemp = userInfoStep['formData'];
@@ -93,12 +131,18 @@ function Join() {
                 userInfo[userInfoStep.id - 1] = userInfoStep;
                 setUserInfo(userInfo);
                 if (userInfoStep.id === userInfo?.length) {
-                  console.log(userInfo);
+                  alert(JSON.stringify(userInfo));
                 } else {
                   setUserInfoStep(userInfo?.filter((step) => step?.id === userInfoStep?.id + 1)[0]);
                 }
               }}
               isFull
+              disabled={
+                userInfoStep?.formData?.filter((item) => item?.isRequired && item?.value === '')
+                  ?.length > 0
+                  ? true
+                  : false
+              }
             >
               {userInfoStep.id === userInfo?.length ? '완료' : '다음'}
             </A.Button>
@@ -106,7 +150,11 @@ function Join() {
           </div>
         ) : (
           <div className={cx('phonecheck-container')}>
-            <h1>휴대폰 번호를 인증해주세요</h1>
+            <A.Label
+              size={'lg'}
+              title={'휴대폰 번호를 인증해주세요'}
+              className={cx('label-title')}
+            />
             <A.Input
               isNumeric
               placeholder="휴대폰 번호를 입력해주세요."
@@ -118,6 +166,7 @@ function Join() {
                 });
               }}
               value={numberToPhoneNumber(phoneInfo?.number)}
+              className={cx('form-input')}
             />
             {phoneInfo?.getAuthNumber && (
               <A.Input
@@ -132,10 +181,16 @@ function Join() {
                 }}
                 value={phoneInfo?.authNumber}
                 label={'인증시간'}
+                className={cx('form-input')}
               />
             )}
             <A.Button
               buttonType={'default'}
+              disabled={
+                phoneInfo.getAuthNumber
+                  ? phoneInfo?.authNumber === ''
+                  : phoneInfo?.number.length < 11
+              }
               onClick={() => {
                 if (phoneInfo.getAuthNumber) {
                   handleChange({

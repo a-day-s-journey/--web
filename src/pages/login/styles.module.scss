@@ -5,3 +5,31 @@
   align-items: center;
   justify-content: center;
 }
+.signup-container {
+  .form-container {
+    padding: 24px 16px;
+    .label-title {
+      margin-bottom: 24px;
+      &-sub {
+        margin-bottom: 10px;
+      }
+    }
+    .user-info-container {
+      .form-wrapper {
+        margin-bottom: 16px;
+        &:last-child {
+          margin-bottom: 8px;
+        }
+      }
+      button {
+      }
+    }
+    .phonecheck-container {
+      .form-input {
+        margin-bottom: 8px;
+      }
+      button {
+      }
+    }
+  }
+}

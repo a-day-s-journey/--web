@@ -5,6 +5,8 @@
   background-color: grey;
   color: white;
   display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
   &-primary {
     background-color: #c4ff13;
     color: black;
@@ -15,7 +17,7 @@
     color: grey;
   }
   &-disabled {
-    background-color: #ddd;
+    background-color: #d8d8d8;
     color: white;
   }
   &-isFull {
