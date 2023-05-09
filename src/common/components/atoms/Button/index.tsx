@@ -10,6 +10,7 @@ export interface ButtonLayoutProps {
   buttonSize?: 'SM' | 'MD' | 'LG';
   isFull?: boolean;
   disabled?: boolean;
+  className?: string;
 }
 
 const Button: FunctionComponent<ButtonProps> = ({
@@ -19,11 +20,13 @@ const Button: FunctionComponent<ButtonProps> = ({
   isFull,
   onClick,
   disabled,
+  className,
 }) => {
   return (
     <button
       className={cx(
         'button',
+        className,
         isFull && 'button-isFull',
         `button-${buttonType ?? 'default'}`,
         `button-${buttonSize ?? 'MD'}`,

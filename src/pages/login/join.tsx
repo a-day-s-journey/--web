@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import { numberToPhoneNumber } from '@utils/format';
 import styles from './styles.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 function Join() {
@@ -27,6 +28,8 @@ function Join() {
     subTitle?: string;
     formData: formDataType[];
   }
+
+  const navigate = useNavigate();
 
   const [phoneInfo, setPhoneInfo] = useState<phoneInfoType>({
     number: '',
@@ -132,6 +135,7 @@ function Join() {
                 setUserInfo(userInfo);
                 if (userInfoStep.id === userInfo?.length) {
                   alert(JSON.stringify(userInfo));
+                  navigate('/mypage');
                 } else {
                   setUserInfoStep(userInfo?.filter((step) => step?.id === userInfoStep?.id + 1)[0]);
                 }
