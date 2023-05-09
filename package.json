@@ -98,6 +98,7 @@
     "prop-types": "^15.8.1",
     "react-app-rewire-alias": "^1.1.7",
     "react-app-rewired": "^2.2.1",
+    "storybook-addon-react-router-v6": "^1.0.0",
     "tsconfig-paths-webpack-plugin": "^4.0.1",
     "webpack": "^5.80.0"
   },

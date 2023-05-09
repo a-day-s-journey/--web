@@ -15,6 +15,7 @@ export const Default = Template.bind({});
 Default.args = {
   buttonType: 'default',
   isFull: false,
+  disabled: false,
   children: '버튼text',
   buttonSize: 'MD',
 };
@@ -24,6 +25,7 @@ export const Primary = Template.bind({});
 Primary.args = {
   buttonType: 'primary',
   isFull: false,
+  disabled: false,
   children: '버튼text',
   buttonSize: 'MD',
 };

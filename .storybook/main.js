@@ -14,6 +14,7 @@ module.exports = {
     '@storybook/addon-mdx-gfm',
     '@storybook/addon-docs',
     '@storybook/addon-viewport',
+    'storybook-addon-react-router-v6',
     {
       name: '@storybook/addon-storysource',
       options: {

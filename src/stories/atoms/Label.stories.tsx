@@ -8,8 +8,14 @@ export default {
   component: Label,
 };
 
-const Template: Story<LabelProps> = (args) => <Label {...args} />;
+const Template: Story<LabelProps> = (args) => <Label title="라벨" required={true} {...args} />;
 
 export const Default = Template.bind({});
 
-Default.args = { children: '라벨', required: true };
+export const SMSize = Template.bind({});
+
+Default.args = { size: 'sm' };
+
+export const LGSize = Template.bind({});
+
+Default.args = { size: 'lg' };
