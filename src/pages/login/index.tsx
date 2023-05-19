@@ -3,7 +3,6 @@ import * as Svgs from '@assets/svgs';
 
 import React, { useEffect, useState } from 'react';
 
-import { Typography } from '@mui/material';
 import axios from 'axios';
 import classNames from 'classnames/bind';
 import styles from './styles.module.scss';
@@ -20,6 +19,7 @@ function Login() {
   const [userInfo, setUserInfo] = useState<UserInfoType | undefined>(undefined);
   const params = new URL(document.location.toString()).searchParams;
   const code = params.get('code');
+  console.log(token, userInfo);
   useEffect(() => {
     async function kakaoLoginLogic() {
       const grant_type = 'authorization_code';
