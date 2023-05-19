@@ -8,6 +8,7 @@
       "@common/*": ["./common/*"],
       "@components": ["./common/components/index.tsx"],
       "@components/*": ["./common/components/*"],
+      "@styles/*": ["./common/styles/*"],
       "@helpers/*": ["./helpers/*"],
       "@modules/*": ["./modules/*"],
       "@pages": ["./pages/index.tsx"],

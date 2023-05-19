@@ -1,2 +1,4 @@
 import { ReactComponent as ArrowLeft } from './arrow/left.svg';
-export { ArrowLeft };
+import { ReactComponent as IcKakao } from './ic-kakao.svg';
+
+export { ArrowLeft, IcKakao };

@@ -11,3 +11,7 @@ declare module '*.svg' {
 interface Window {
   Kakao: any;
 }
+
+declare module '*.woff';
+declare module '*.woff2';
+declare module '*.otf';
