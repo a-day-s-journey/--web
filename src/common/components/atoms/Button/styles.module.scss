@@ -1,24 +1,28 @@
+@import '@styles/_variables.scss';
 .button {
   border: 0;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 0 4px;
   background-color: grey;
   color: white;
-  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+  gap: 8px;
   font-size: 18px;
   font-weight: 500;
   &-primary {
-    background-color: #c4ff13;
-    color: black;
+    background-color: $main;
+    color: $greyscale0;
   }
   &-ghost {
-    background-color: #fff;
+    background-color: $greyscale0;
     border: 1px solid grey;
     color: grey;
   }
   &-disabled {
-    background-color: #d8d8d8;
-    color: white;
+    background-color: $disable;
+    color: $greyscale0;
   }
   &-isFull {
     width: 100%;

@@ -68,14 +68,14 @@ function Join() {
     },
     {
       id: 4,
-      title: '현재 거주중인 지역을 입력해주세요.',
-      formData: [{ question: '지역', isRequired: true, value: '' }],
-    },
-    {
-      id: 5,
       skippable: true,
       title: 'MBTI를 적어주세요.',
       formData: [{ question: 'MBTI', isRequired: false, value: '' }],
+    },
+    {
+      id: 5,
+      title: '현재 거주중인 지역을 입력해주세요.',
+      formData: [{ question: '지역', isRequired: false, value: '' }],
     },
   ]);
 
@@ -173,23 +173,26 @@ function Join() {
               className={cx('form-input')}
             />
             {phoneInfo?.getAuthNumber && (
-              <A.Input
-                isNumeric
-                placeholder="인증번호를 입력해주세요."
-                onChange={(value) => {
-                  handleChange({
-                    infoName: 'phoneInfo',
-                    key: 'authNumber',
-                    value: value,
-                  });
-                }}
-                value={phoneInfo?.authNumber}
-                label={'인증시간'}
-                className={cx('form-input')}
-              />
+              <div className={cx('auth-input-wrapper')}>
+                <A.Input
+                  isNumeric
+                  placeholder="인증번호를 입력해주세요."
+                  onChange={(value) => {
+                    handleChange({
+                      infoName: 'phoneInfo',
+                      key: 'authNumber',
+                      value: value,
+                    });
+                  }}
+                  value={phoneInfo?.authNumber}
+                  label={'인증시간'}
+                  className={cx('form-input')}
+                />
+                <button>재전송</button>
+              </div>
             )}
             <A.Button
-              buttonType={'default'}
+              buttonType={'primary'}
               disabled={
                 phoneInfo.getAuthNumber
                   ? phoneInfo?.authNumber === ''

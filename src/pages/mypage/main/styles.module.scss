@@ -1,3 +1,4 @@
+@import '@styles/_variables.scss';
 .mypage-container {
   padding: 0 16px;
   .image-container {
@@ -39,6 +40,9 @@
     .edit-image {
       font-size: 12px;
       font-weight: 400;
+      letter-spacing: -0.36px;
+      line-height: 20px;
+      color: $main;
     }
   }
   .school-info {
@@ -49,6 +53,7 @@
     border: 1px solid #eaeaea;
     border-radius: 10px;
     padding: 12px 0;
+    box-shadow: (2px 2px 4px #0000000a);
     &-wrapper {
       padding: 0 4px;
       width: 100%;

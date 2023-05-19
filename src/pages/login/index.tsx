@@ -1,7 +1,9 @@
 import * as A from '@components/atoms';
+import * as Svgs from '@assets/svgs';
 
 import React, { useEffect, useState } from 'react';
 
+import { Typography } from '@mui/material';
 import axios from 'axios';
 import classNames from 'classnames/bind';
 import styles from './styles.module.scss';
@@ -68,16 +70,14 @@ function Login() {
       <A.Button
         buttonType={'default'}
         onClick={() => {
-          // Kakao.Auth.authorize({});
           loginWithKakao();
         }}
+        className={cx('kakao-button')}
+        isFull
       >
-        카카오로 로그인하기
+        <Svgs.IcKakao />
+        카카오톡으로 시작하기
       </A.Button>
-      <br />
-      {token && `token: ${token}`}
-      <br />
-      {userInfo && `email: ${userInfo?.email}`}
     </div>
   );
 }

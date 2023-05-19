@@ -23,7 +23,7 @@ function Main() {
           />
           <div className={cx('edit-icon')}></div>
         </div>
-        <div className={cx('edit-image')}>사진 수정</div>
+        <button className={cx('edit-image')}>사진 수정</button>
       </div>
 
       <div className={cx('school-info')}>
@@ -50,7 +50,7 @@ function Main() {
         </div>
       </div>
 
-      <A.Button buttonType={'default'} isFull className={cx('edit-profile-btn')}>
+      <A.Button buttonType={'primary'} isFull className={cx('edit-profile-btn')}>
         프로필 수정하기
       </A.Button>
       <div className={cx('link-list')}>
@@ -65,4 +65,5 @@ function Main() {
   );
 }
 export default Main;
+export const loginRequire = true;
 export const path = '/mypage';

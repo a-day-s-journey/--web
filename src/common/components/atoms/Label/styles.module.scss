@@ -1,12 +1,17 @@
+@import '@styles/_variables.scss';
 .label {
-  color: #424242;
-  color: #191919;
+  color: $greyscale9;
+  font-size: 18px;
+  letter-spacing: -0.54px;
+  line-height: 24px;
   & .required {
-    color: #fe8256;
+    color: $main;
     margin-left: 3px;
   }
   &-sm {
     font-size: 14px;
+    letter-spacing: -0.42px;
+    line-height: 22px;
     font-weight: 500;
   }
   &-md {

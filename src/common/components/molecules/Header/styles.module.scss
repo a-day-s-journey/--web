@@ -1,3 +1,4 @@
+@import '@styles/_variables.scss';
 .header-container {
   height: 57px;
   width: 100%;
@@ -29,7 +30,8 @@
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
       font-size: 18px;
-      font-weight: 400;
+      font-weight: 500;
+      color: $greyscale10;
     }
     .button-wrapper {
       cursor: pointer;

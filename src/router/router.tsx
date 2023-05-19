@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function Router() {
   interface PageType {
     path: string;
+    loginRequire?: boolean;
     default: any; //HTMLElement; //React.ReactNode;
   }
 
