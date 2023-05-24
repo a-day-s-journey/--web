@@ -51,12 +51,13 @@
 }
 
 body {
-  margin: 0;
   background: #fff !important;
   font-family: 'Noto Sans KR', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-display: swap;
+  max-width: 769px;
+  margin: 0 auto;
   #root {
     height: 100%;
   }

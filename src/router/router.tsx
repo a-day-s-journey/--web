@@ -1,3 +1,4 @@
+import * as M from '@components/molecules';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as PageList from '@pages';
 
@@ -7,7 +8,7 @@ function Router() {
   interface PageType {
     path: string;
     loginRequire?: boolean;
-    default: any; //HTMLElement; //React.ReactNode;
+    default: () => JSX.Element;
   }
 
   const routes: PageType[] = Object.values(PageList).map((pageItem) => {
@@ -26,6 +27,7 @@ function Router() {
           );
         })}
       </Routes>
+      <M.BottomAppbar />
     </BrowserRouter>
   );
 }
