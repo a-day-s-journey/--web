@@ -19,12 +19,12 @@ const BottomAppbar: FunctionComponent<AppbarProps> = () => {
   // const navigate = useNavigate();
   const { pathname } = useLocation();
   const showBar = [
-    /^\/test\//,
-    /^\/guestbook\//,
+    /^\/test/,
+    /^\/guestbook/,
     /^\/guestbook\/[0-9]+$/g,
-    /^\/potal\//,
-    /^\/meet\//,
-    /^\/meet\/create\//,
+    /^\/potal/,
+    /^\/meet/,
+    /^\/meet\/create/,
     /^\/meet\/[0-9]+$/g,
   ];
 
