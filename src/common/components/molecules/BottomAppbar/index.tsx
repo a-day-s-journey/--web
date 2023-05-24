@@ -19,6 +19,7 @@ const BottomAppbar: FunctionComponent<AppbarProps> = () => {
   // const navigate = useNavigate();
   const { pathname } = useLocation();
   const showBar = [
+    /^\/test\//,
     /^\/guestbook\//,
     /^\/guestbook\/[0-9]+$/g,
     /^\/potal\//,
@@ -27,7 +28,7 @@ const BottomAppbar: FunctionComponent<AppbarProps> = () => {
     /^\/meet\/[0-9]+$/g,
   ];
 
-  // if (!showBar?.some((reg) => new RegExp(reg).test(pathname))) return <></>;
+  if (!showBar?.some((reg) => new RegExp(reg).test(pathname))) return <></>;
   return (
     <div className={cx('appbar-container')}>
       <div className={cx('appbar-container-fix')}>
